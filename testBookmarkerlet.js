@@ -2,7 +2,7 @@
 javascript:(function() {
     // Fetch the i18n JSON file - this could also be done dynamically like
     // window.location.origin - would always return the domain name
-    fetch('https://test-argo-alb.goodyear.eu/en_gb/consumer.i18nlist.json')
+    fetch('https://test-argo-alb.goodyear.eu/sk_sk/consumer.i18nlist.json')
       .then(response => response.json())
       .then(data => {
         // Get all text nodes on the web page
