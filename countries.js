@@ -8,7 +8,7 @@ const minMaxNumericPattern = (
       ? `(^0\\d{${min},${max}})|((?!(0))\\d{${min},${max}})$`
       : `^${startNumber}[0-9]{${min - 1},${max - 1}}$`;
 
-export const getIbanSizeWithoutCountryCode = (fullIbanSize) =>
+const getIbanSizeWithoutCountryCode = (fullIbanSize) =>
   fullIbanSize - 2;
 
 const alphaNumericPattern = (length) => `^[a-zA-Z0-9]{${length}}$`;
