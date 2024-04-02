@@ -1,29 +1,26 @@
-const minMaxNumericPattern = (
-    min,
-    max,
-    startNumber = '[0-9]',
-    isPhoneFormat = false
-  ) =>
-    isPhoneFormat
-      ? `(^0\\d{${min},${max}})|((?!(0))\\d{${min},${max}})$`
-      : `^${startNumber}[0-9]{${min - 1},${max - 1}}$`;
+const minMaxNumericPattern = (min, max, startNumber = '[0-9]', isPhoneFormat = false) => {
+    return isPhoneFormat
+        ? `(^0\\d{${min},${max}})|((?!(0))\\d{${min},${max}})$`
+        : `^${startNumber}[0-9]{${min - 1},${max - 1}}$`;
+};
 
-const getIbanSizeWithoutCountryCode = (fullIbanSize) =>
-  fullIbanSize - 2;
+const getIbanSizeWithoutCountryCode = (fullIbanSize) => {
+    return fullIbanSize - 2;
+};
 
-const alphaNumericPattern = (length) => `^[a-zA-Z0-9]{${length}}$`;
+const alphaNumericPattern = (length) => {
+    return `^[a-zA-Z0-9]{${length}}$`;
+};
 
-const minMaxAlphaNumericPattern = (min: number, max: number) =>
-  `^[a-zA-Z0-9]{${min},${max}}$`;
+const minMaxAlphaNumericPattern = (min, max) => {
+    return `^[a-zA-Z0-9]{${min},${max}}$`;
+};
 
-const numericPattern = (
-  length,
-  startNumber = '[0-9]',
-  isPhoneFormat = false
-) =>
-  isPhoneFormat
-    ? `(^0\\d{${length}})|((?!(0))\\d{${length}})$`
-    : `^${startNumber}[0-9]{${length - 1}}$`;
+const numericPattern = (length, startNumber = '[0-9]', isPhoneFormat = false) => {
+    return isPhoneFormat
+        ? `(^0\\d{${length}})|((?!(0))\\d{${length}})$`
+        : `^${startNumber}[0-9]{${length - 1}}$`;
+};
 
 const countries = [
   {
