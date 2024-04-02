@@ -13,6 +13,15 @@ const getIbanSizeWithoutCountryCode = (fullIbanSize) =>
 
 const alphaNumericPattern = (length) => `^[a-zA-Z0-9]{${length}}$`;
 
+const numericPattern = (
+  length,
+  startNumber = '[0-9]',
+  isPhoneFormat = false
+) =>
+  isPhoneFormat
+    ? `(^0\\d{${length}})|((?!(0))\\d{${length}})$`
+    : `^${startNumber}[0-9]{${length - 1}}$`;
+
 export default country = [
   {
     country: 'Albania',
