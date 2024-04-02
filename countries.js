@@ -13,6 +13,9 @@ const getIbanSizeWithoutCountryCode = (fullIbanSize) =>
 
 const alphaNumericPattern = (length) => `^[a-zA-Z0-9]{${length}}$`;
 
+const minMaxAlphaNumericPattern = (min: number, max: number) =>
+  `^[a-zA-Z0-9]{${min},${max}}$`;
+
 const numericPattern = (
   length,
   startNumber = '[0-9]',
